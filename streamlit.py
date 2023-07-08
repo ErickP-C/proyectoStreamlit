@@ -15,6 +15,10 @@ edad = st.number_input('Edad', min_value=0, max_value=150, step=1)
 email = st.text_input('Email')
 telefono = st.text_input('Teléfono')
 
+# Mostrar la imagen
+url_imagen = 'https://img.freepik.com/vector-premium/actualizar-documentos-reclamo-registro-informacion-personal-informe-declaracion-impuestos-informacion-ingresos_566886-2161.jpg?w=1380'
+st.image(url_imagen, use_column_width=True)
+
 # Botón para enviar el formulario
 if st.button('Registrar Cliente'):
     # Crear un diccionario con los datos del cliente
