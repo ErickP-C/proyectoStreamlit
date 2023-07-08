@@ -5,6 +5,9 @@ import pandas as pd
 lista_clientes = []
 
 st.title('Formulario de Registro de Clientes')
+# Mostrar la imagen
+url_imagen = 'https://img.freepik.com/vector-premium/actualizar-documentos-reclamo-registro-informacion-personal-informe-declaracion-impuestos-informacion-ingresos_566886-2161.jpg?w=1380'
+st.image(url_imagen, use_column_width=True)
 
 # Obtener los datos del cliente
 nombre = st.text_input('Nombre')
@@ -23,9 +26,6 @@ if st.button('Registrar Cliente'):
 # Convertir la lista de clientes en un dataframe al final
 df_clientes = pd.DataFrame(lista_clientes)
 
-# Mostrar la imagen
-url_imagen = 'https://img.freepik.com/vector-premium/actualizar-documentos-reclamo-registro-informacion-personal-informe-declaracion-impuestos-informacion-ingresos_566886-2161.jpg?w=1380'
-st.image(url_imagen, caption='Imagen de ejemplo', use_column_width=True)
 
 # Mostrar la tabla con los clientes registrados
 st.header('Clientes Registrados')
