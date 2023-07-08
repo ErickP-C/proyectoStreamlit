@@ -1,8 +1,8 @@
 import streamlit as st
 import pandas as pd
 
-# Crear un dataframe vacío para almacenar los datos de los clientes
-df_clientes = pd.DataFrame(columns=['Nombre', 'Edad', 'Email', 'Teléfono'])
+# Crear una lista vacía para almacenar los datos de los clientes
+lista_clientes = []
 
 st.title('Formulario de Registro de Clientes')
 
@@ -16,9 +16,12 @@ telefono = st.text_input('Teléfono')
 if st.button('Registrar Cliente'):
     # Crear un diccionario con los datos del cliente
     nuevo_cliente = {'Nombre': nombre, 'Edad': edad, 'Email': email, 'Teléfono': telefono}
-    # Agregar el cliente al dataframe
-    df_clientes = df_clientes.append(nuevo_cliente, ignore_index=True)
+    # Agregar el cliente a la lista
+    lista_clientes.append(nuevo_cliente)
     st.success('Cliente registrado exitosamente.')
+
+# Convertir la lista de clientes en un dataframe al final
+df_clientes = pd.DataFrame(lista_clientes)
 
 # Mostrar la tabla con los clientes registrados
 st.header('Clientes Registrados')
