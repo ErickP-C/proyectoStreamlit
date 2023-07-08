@@ -24,6 +24,13 @@ if st.button('Registrar Cliente'):
     lista_clientes.append(nuevo_cliente)
     st.success('Cliente registrado exitosamente.')
 
+# Convertir la lista de clientes en un dataframe
+df_clientes = pd.DataFrame(lista_clientes)
+
+# Mostrar la tabla con los clientes registrados
+st.header('Clientes Registrados')
+st.dataframe(df_clientes)
+
 # Botón para eliminar un registro
 if st.button('Eliminar Registro'):
     if lista_clientes:
@@ -34,10 +41,3 @@ if st.button('Eliminar Registro'):
         # Eliminar el cliente seleccionado de la lista de clientes
         lista_clientes = [cliente for cliente in lista_clientes if cliente['Nombre'] != cliente_a_eliminar]
         st.success('Cliente eliminado exitosamente.')
-
-# Convertir la lista de clientes en un dataframe
-df_clientes = pd.DataFrame(lista_clientes)
-
-# Mostrar la tabla con los clientes registrados
-st.header('Clientes Registrados')
-st.dataframe(df_clientes)
